@@ -3,9 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= current_page.data.title || "Ronald Langeveld" %></title>
-    <meta name="description" content="<%= current_page.data.description || "Ronald Langeveld — software engineer." %>">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>">
+
+    <%# SEO / social shared values %>
+    <% site_url         = "https://ronaldlangeveld.com" %>
+    <% page_url         = "#{site_url}#{current_page.url}" %>
+    <% page_title       = current_page.data.title       || "Ronald Langeveld — product engineer" %>
+    <% page_description = current_page.data.description || "Product engineer building web products on the internet. Passionate about software that's fun to use and maintain. Previously at Ghost. Based in Seoul." %>
+    <% page_image       = "#{site_url}/images/ronald.jpg" %>
+
+    <!-- Primary meta -->
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
+    <meta name="author" content="Ronald Langeveld">
+    <link rel="canonical" href="<%= page_url %>">
+
+    <!-- Favicon / touch icons -->
+    <link rel="icon" type="image/jpeg" href="/images/ronald.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="/images/ronald.jpg">
+    <link rel="apple-touch-icon" href="/images/ronald.jpg">
+
+    <!-- Open Graph (Facebook, LinkedIn, iMessage, Slack, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ronald Langeveld">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <meta property="og:url" content="<%= page_url %>">
+    <meta property="og:image" content="<%= page_image %>">
+    <meta property="og:image:alt" content="Ronald Langeveld">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ronaldlangeveld">
+    <meta name="twitter:creator" content="@ronaldlangeveld">
+    <meta name="twitter:title" content="<%= page_title %>">
+    <meta name="twitter:description" content="<%= page_description %>">
+    <meta name="twitter:image" content="<%= page_image %>">
+    <meta name="twitter:image:alt" content="Ronald Langeveld">
+
     <%= stylesheet_link_tag "site" %>
   </head>
   <body>

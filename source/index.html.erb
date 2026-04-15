@@ -57,3 +57,183 @@ title: Ronald Langeveld — product engineer
     </div>
   </div>
 </section>
+
+<section class="section" id="work-with-me">
+  <div class="container">
+    <div class="mb-5">
+      <p class="is-size-7 has-text-grey has-text-weight-semibold is-uppercase mb-2" style="letter-spacing: 0.12em;">
+        Now booking — Q3 availability
+      </p>
+      <h2 class="title is-2 mb-3">Product engineering.</h2>
+      <p class="subtitle is-5 has-text-grey-dark">
+        I help teams turn ideas into production software — and make existing software do more.
+      </p>
+    </div>
+
+    <div class="hire-card box">
+      <h3 class="title is-5 mb-3">What I help with</h3>
+      <ul class="hire-list mb-5">
+        <li>Building new products from idea to launch</li>
+        <li>Shipping features into existing products</li>
+        <li>Integrating systems, APIs, and third-party platforms</li>
+        <li>Building AI agents and workflows into your app</li>
+      </ul>
+
+      <h3 class="title is-5 mb-3">Engineering I love</h3>
+      <ul class="hire-list mb-5">
+        <li>Improving CI/CD pipelines so deploys stop being risky</li>
+        <li>Automating tests and lifting coverage where it counts</li>
+        <li>Refactoring toward maintainable architecture</li>
+        <li>Untangling legacy code without a full rewrite</li>
+      </ul>
+
+      <h3 class="title is-5 mb-3">How I work</h3>
+      <p class="has-text-grey-dark mb-3">
+        I embed with your team, ship code from week one, and stay until it's running in production. No drawn-out discovery phases or handoff docs — I pick up the work and get it done.
+      </p>
+      <p class="has-text-grey-dark mb-5">
+        Most of what I take on moves from idea to live in a matter of weeks. I use modern AI tooling to move quickly without cutting corners, and leave behind code your team can read, maintain, and build on.
+      </p>
+
+      <div class="hire-cta">
+        <a href="mailto:ronaldlangeveld@gmail.com" class="button is-dark is-medium">
+          Let's talk
+        </a>
+        <span class="hire-price">
+          <span class="price-amount">$9,000</span><span class="price-period">/month</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="referral-note mt-5">
+      <p class="has-text-grey-dark mb-0">
+        <strong>Just need help with a Ghost blog?</strong>
+        I run <a href="https://pixelglass.co" target="_blank" rel="noopener">PixelGlass</a> for that — custom themes, integrations, and ongoing support for Ghost publishers, without the full retainer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="mb-6">
+      <p class="is-size-7 has-text-grey has-text-weight-semibold is-uppercase mb-2" style="letter-spacing: 0.12em;">
+        Portfolio
+      </p>
+      <h2 class="title is-2 mb-3">Open source work.</h2>
+      <p class="subtitle is-5 has-text-grey-dark">
+        A few repos I've built and contributed to.
+      </p>
+    </div>
+
+    <div class="columns is-multiline">
+      <% repos = [
+        {
+          name: "Ghost",
+          url: "https://github.com/TryGhost/Ghost",
+          desc: "Independent technology for modern publishing, memberships, subscriptions and newsletters.",
+          stars: "52.5k",
+          lang: "JavaScript",
+          role: "Contributor",
+        },
+        {
+          name: "Koenig",
+          url: "https://github.com/TryGhost/Koenig",
+          desc: "Ghost's editor, built on Lexical. Worked on this full-time as part of Ghost's product team.",
+          stars: 270,
+          lang: "JavaScript",
+          role: "Contributor",
+        },
+        {
+          name: "ghost-ruby",
+          url: "https://github.com/ronaldlangeveld/ghost-ruby",
+          desc: "Ruby client for Ghost's Content & Admin APIs. Browse, read, create, edit, delete — idiomatic Ruby.",
+          stars: 9,
+          lang: "Ruby",
+        },
+        {
+          name: "python-fiix-cmms-client",
+          url: "https://github.com/Saint-Solutions/python-fiix-cmms-client",
+          desc: "Production-grade Fiix CMMS interfacing client for Python.",
+          stars: 8,
+          lang: "Python",
+          role: "Author",
+        },
+        {
+          name: "telefizz",
+          url: "https://github.com/ronaldlangeveld/telefizz",
+          desc: "Production webhook relay: Fizzy → Telegram. Clean Architecture, no Zapier required.",
+          stars: 5,
+          lang: "Ruby",
+        },
+        {
+          name: "node-payfast",
+          url: "https://github.com/ronaldlangeveld/node-payfast",
+          desc: "Node library for building custom Payfast payment integrations.",
+          stars: 2,
+          lang: "JavaScript",
+        },
+      ] %>
+      <% repos.each do |repo| %>
+        <div class="column is-half">
+          <a href="<%= repo[:url] %>" target="_blank" rel="noopener" class="portfolio-card box is-flex is-flex-direction-column">
+            <h3 class="title is-4 mb-2">
+              <%= repo[:name] %>
+              <% if repo[:role] %>
+                <span class="has-text-grey is-size-6 has-text-weight-normal ml-2"><%= repo[:role] %></span>
+              <% end %>
+            </h3>
+            <p class="has-text-grey-dark mb-4" style="flex-grow: 1;">
+              <%= repo[:desc] %>
+            </p>
+            <div class="tags mb-0">
+              <span class="tag is-light">★ <%= repo[:stars] %></span>
+              <span class="tag is-light"><%= repo[:lang] %></span>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="mt-5">
+      <a href="https://github.com/ronaldlangeveld" target="_blank" rel="noopener" class="has-text-grey-dark">
+        → See all repos on GitHub
+      </a>
+    </p>
+  </div>
+</section>
+
+<footer class="footer site-footer">
+  <div class="container">
+    <div class="columns is-vcentered is-multiline mb-0">
+      <div class="column">
+        <p class="title is-3 mb-3">Looking forward to hearing from you.</p>
+        <p class="subtitle is-6 has-text-grey-dark mb-0">
+          Open to interesting projects, friendly collaborations, and a good chat.
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <a href="mailto:hi@ronaldlangeveld.com" class="button is-dark is-medium">
+          hi@ronaldlangeveld.com
+        </a>
+      </div>
+    </div>
+
+    <hr class="footer-rule" />
+
+    <div class="columns is-vcentered is-mobile is-multiline mb-0">
+      <div class="column">
+        <p class="is-size-7 has-text-grey mb-0">
+          &copy; <%= Time.now.year %> Ronald Langeveld &middot; Made in Seoul
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <nav class="footer-links">
+          <a href="https://github.com/ronaldlangeveld" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/ronaldlangeveld" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://pixelglass.co" target="_blank" rel="noopener">PixelGlass</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -28,3 +28,109 @@
     opacity: 1;
   }
 }
+
+// Hire callout — subtle tinted card
+.hire-card {
+  background: #fafaf9;
+  border: 1px solid #e5e5e5;
+  box-shadow: none;
+  padding: 2rem 2.25rem;
+}
+
+.hire-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hire-price {
+  font-size: 0.95rem;
+  color: #888;
+
+  .price-amount {
+    font-weight: 600;
+    color: #363636;
+  }
+
+  .price-period {
+    margin-left: 0.15rem;
+  }
+}
+
+.referral-note {
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #d4d4d4;
+  background: transparent;
+
+  a {
+    color: #1a1a1a;
+    font-weight: 500;
+    border-bottom: 1px solid #c0c0c0;
+
+    &:hover {
+      border-bottom-color: #1a1a1a;
+    }
+  }
+}
+
+.hire-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #363636;
+
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+  }
+}
+
+// Portfolio cards (OSS repos) — anchor-as-box with hover lift
+.portfolio-card {
+  height: 100%;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    color: inherit;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Footer polish
+.site-footer {
+  background: #fafaf9;
+  border-top: 1px solid #e5e5e5;
+  padding: 4rem 1.5rem 2.5rem;
+
+  .footer-rule {
+    background: #e5e5e5;
+    height: 1px;
+    margin: 2.5rem 0 1.25rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    a {
+      color: #555;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #1a1a1a;
+      }
+    }
+  }
+}
