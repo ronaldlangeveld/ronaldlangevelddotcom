@@ -1,9 +1,35 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="container">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <strong>Ronald Langeveld</strong>
-      </a>
+<nav class="navbar custom-navbar" role="navigation" aria-label="main navigation">
+  <div class="container custom-navbar__inner">
+    <div class="custom-navbar__spacer"></div>
+
+    <a class="navbar-item custom-navbar__brand" href="/">
+      <strong>Ronald Langeveld</strong>
+    </a>
+
+    <div class="custom-navbar__menu">
+      <div class="navbar-item has-dropdown" data-dropdown>
+        <a class="navbar-link is-arrowless custom-navbar__burger"
+           role="button"
+           aria-label="Open menu"
+           aria-expanded="false"
+           aria-haspopup="true">
+          <span class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+        <div class="navbar-dropdown is-right is-boxed">
+          <a class="navbar-item" href="https://ronald.ink" target="_blank" rel="noopener">
+            Blog
+            <span class="has-text-grey-light ml-2">↗</span>
+          </a>
+          <a class="navbar-item" href="https://x.com/ronaldlangeveld" target="_blank" rel="noopener">
+            Twitter / X
+            <span class="has-text-grey-light ml-2">↗</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

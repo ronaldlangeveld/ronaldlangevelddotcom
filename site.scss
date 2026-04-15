@@ -29,6 +29,23 @@
   }
 }
 
+// Approach — the "AI-native speed with taste" pull-quote between hero and consulting
+.approach-section {
+  background: #fafaf9;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.approach-quote {
+  // Slightly looser line-height than Bulma's default title for long-read feel
+  line-height: 1.25;
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+  }
+}
+
 // Hire callout — subtle tinted card
 .hire-card {
   background: #fafaf9;
@@ -103,6 +120,61 @@
     color: inherit;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Navbar: centered brand + burger dropdown on the right (desktop + mobile)
+.custom-navbar {
+  .custom-navbar__inner {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .custom-navbar__spacer,
+  .custom-navbar__menu {
+    flex: 1 1 0;
+    display: flex;
+    min-width: 0;
+  }
+
+  .custom-navbar__spacer {
+    justify-content: flex-start;
+  }
+
+  .custom-navbar__menu {
+    justify-content: flex-end;
+  }
+
+  .custom-navbar__brand {
+    flex: 0 0 auto;
+  }
+
+  .custom-navbar__burger {
+    cursor: pointer;
+
+    .burger-icon {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+
+      span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 1px;
+        transition: background 0.2s ease;
+      }
+    }
+  }
+
+  // Bulma hides .navbar-dropdown on mobile only when inside .navbar-menu.
+  // Our dropdown sits outside navbar-menu, so it renders on all viewports.
+  // Force it visible when .is-active is toggled by the JS click handler.
+  .navbar-item.has-dropdown.is-active > .navbar-dropdown {
+    display: block;
   }
 }
 
