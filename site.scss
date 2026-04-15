@@ -171,9 +171,17 @@
     }
   }
 
-  // Bulma hides .navbar-dropdown on mobile only when inside .navbar-menu.
-  // Our dropdown sits outside navbar-menu, so it renders on all viewports.
-  // Force it visible when .is-active is toggled by the JS click handler.
+  // Bulma only hides .navbar-dropdown on mobile when it sits inside
+  // .navbar-menu. Our dropdown sits outside .navbar-menu, so we hide
+  // it ourselves at mobile widths and let the JS click handler toggle
+  // .is-active to re-show it. On desktop Bulma's own :hover / .is-active
+  // rules continue to work unchanged.
+  .navbar-item.has-dropdown > .navbar-dropdown {
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
   .navbar-item.has-dropdown.is-active > .navbar-dropdown {
     display: block;
   }
