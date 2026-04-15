@@ -1,0 +1,59 @@
+---
+title: Ronald Langeveld — product engineer
+---
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <strong>Ronald Langeveld</strong>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered is-variable is-8">
+        <div class="column is-7">
+          <figure class="image is-128x128 mb-5">
+            <%= image_tag "ronald.jpg", class: "is-rounded", alt: "Ronald Langeveld", style: "object-fit: cover; object-position: top; width: 128px; height: 128px;" %>
+          </figure>
+          <h1 class="title is-1 mb-5">
+            Hi, I'm Ronald.
+          </h1>
+          <p class="subtitle is-4 has-text-weight-normal mb-5">
+            I'm a product engineer, building web products on the internet.
+          </p>
+          <p class="is-size-5 has-text-grey-dark mb-5">
+            I have a passion for building software that's fun to use and maintain. In the past I've worked with some brands you might be familiar with.
+          </p>
+
+          <div class="columns is-mobile is-multiline is-vcentered mt-4">
+            <% logos = [
+              { src: "logos/ghost-logo-dark.png", alt: "Ghost" },
+              { src: "logos/Steinhoff_International_logo.svg.png", alt: "Steinhoff International" },
+              { src: "logos/kbh-logo-1.webp", alt: "Kindbridge Behavioral Health" },
+              { src: "logos/game-quitters.png", alt: "Game Quitters" },
+              { src: "logos/Feefty_harvest_group_logo.png", alt: "Feefty Harvest Group" },
+              { src: "logos/saint-solutions.png", alt: "Saint Solutions" },
+              { src: "logos/intenta-digital.png", alt: "Intenta Digital" },
+              { src: "logos/checkout-page-logo.svg", alt: "Checkout Page" },
+            ] %>
+            <% logos.each do |logo| %>
+              <div class="column is-narrow py-3 pr-5">
+                <%= image_tag logo[:src], alt: logo[:alt], class: "brand-logo" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="column is-5">
+          <figure class="image mx-auto" style="max-width: 420px;">
+            <%= image_tag "wave.jpeg", alt: "Wave", style: "width: 100%; height: auto;" %>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

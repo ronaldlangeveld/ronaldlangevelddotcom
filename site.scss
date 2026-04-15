@@ -1,0 +1,30 @@
+// --------------------------------------------------
+// Bulma customization (optional — override variables here)
+// Example:
+// @use "bulma/sass/utilities/initial-variables" with (
+//   $family-primary: '"Inter", sans-serif',
+//   $primary: #6ee7b7
+// );
+// --------------------------------------------------
+
+@use "bulma/bulma";
+
+// --------------------------------------------------
+// Custom styles
+// --------------------------------------------------
+
+// Brand logos row — normalise sizes + subtle grayscale
+.brand-logo {
+  max-height: 40px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
