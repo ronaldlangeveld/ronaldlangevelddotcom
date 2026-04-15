@@ -21,8 +21,9 @@ There is no test suite (`npm test` is a placeholder).
 
 - **`config.rb`** wires the SCSS compile into Middleman as an `:external_pipeline`. In dev it runs `npx sass --load-path=node_modules --watch ./site.scss:.tmp/dist/stylesheets/site.css`; in build mode it runs with `--style=compressed --no-source-map`. The pipeline's `source: ".tmp/dist"` means the compiled CSS is merged into Middleman's asset pipeline from there — do **not** edit `.tmp/`.
 - **`site.scss`** (repo root — intentionally **not** under `source/`) is the single SCSS entry. It does `@use "bulma/bulma";` to pull in all of Bulma, resolved via the `--load-path=node_modules` flag on the sass command. Bulma variable overrides go **above** the `@use` line. Custom CSS goes below it. Keeping this file at the repo root avoids Middleman also serving it as an asset (which would produce a stale extensionless `site` file in `build/stylesheets/`).
-- **`source/layouts/layout.erb`** is the single site layout. Links the compiled stylesheet via `stylesheet_link_tag "site"`.
-- **`source/index.html.erb`** is the only content page — currently a minimal Bulma skeleton (nav + empty hero). Front matter provides `title`. XML/JSON/TXT pages render without a layout.
+- **`source/layouts/layout.erb`** is the single site layout. Links the compiled stylesheet via `stylesheet_link_tag "site"`. Also holds the site-wide SEO/OG/Twitter meta (see local vars at the top of the `<head>` — `site_url`, `page_title`, `page_description`, `page_image` — overridden per-page via frontmatter).
+- **`source/index.html.erb`** is a thin manifest of partial includes — the page is assembled from `source/partials/_navbar.erb`, `_hero.erb`, `_work_with_me.erb`, `_portfolio.erb`, `_footer.erb`. Edit the partial for that section, not the index. Front matter on `index.html.erb` provides `title`. XML/JSON/TXT pages render without a layout.
+- **`data/*.rb`** holds structured Ruby data consumed by partials (currently `data/logos.rb` → `SiteData::LOGOS` and `data/repos.rb` → `SiteData::REPOS`). `config.rb` requires these files at boot and exposes them to templates via `logos` / `repos` helpers. Note: Middleman's built-in `data.*` loader only parses YAML/JSON in `data/`, so the `.rb` files here don't collide with that convention.
 - The `middleman-autoprefixer` gem in `Gemfile` is unused but harmless.
 
 ## Conventions

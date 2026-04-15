@@ -1,0 +1,41 @@
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="mb-6">
+      <p class="is-size-7 has-text-grey has-text-weight-semibold is-uppercase mb-2" style="letter-spacing: 0.12em;">
+        Portfolio
+      </p>
+      <h2 class="title is-2 mb-3">Open source work.</h2>
+      <p class="subtitle is-5 has-text-grey-dark">
+        A few repos I've built and contributed to.
+      </p>
+    </div>
+
+    <div class="columns is-multiline">
+      <% repos.each do |repo| %>
+        <div class="column is-half">
+          <a href="<%= repo[:url] %>" target="_blank" rel="noopener" class="portfolio-card box is-flex is-flex-direction-column">
+            <h3 class="title is-4 mb-2">
+              <%= repo[:name] %>
+              <% if repo[:role] %>
+                <span class="has-text-grey is-size-6 has-text-weight-normal ml-2"><%= repo[:role] %></span>
+              <% end %>
+            </h3>
+            <p class="has-text-grey-dark mb-4" style="flex-grow: 1;">
+              <%= repo[:desc] %>
+            </p>
+            <div class="tags mb-0">
+              <span class="tag is-light">★ <%= repo[:stars] %></span>
+              <span class="tag is-light"><%= repo[:lang] %></span>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
+    <p class="mt-5">
+      <a href="https://github.com/ronaldlangeveld" target="_blank" rel="noopener" class="has-text-grey-dark">
+        → See all repos on GitHub
+      </a>
+    </p>
+  </div>
+</section>

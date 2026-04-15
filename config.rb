@@ -1,6 +1,23 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+# Load custom Ruby data modules (data/*.rb).
+# Middleman's built-in `data.*` loader only handles YAML/JSON, so these
+# don't interfere — they're plain Ruby modules exposing frozen constants.
+Dir[File.expand_path('data/*.rb', __dir__)].sort.each { |f| require f }
+
+# Expose the data to templates via helpers.
+# Partials call `logos` / `repos` — cleaner than referencing `SiteData::...` directly.
+helpers do
+  def logos
+    SiteData::LOGOS
+  end
+
+  def repos
+    SiteData::REPOS
+  end
+end
+
 # Compile SCSS (with Bulma) via Dart Sass. Output goes to .tmp/dist, which
 # Middleman merges into its asset pipeline (see `source:` below).
 activate :external_pipeline,
