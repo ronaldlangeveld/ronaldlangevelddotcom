@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="en">
+<%# data-theme="light" locks Bulma to its light theme so the site stays
+    readable even when the OS is in dark mode (Bulma 1.x auto-switches via
+    prefers-color-scheme otherwise). The meta tag keeps native UI — form
+    controls, scrollbars, autofill — light to match. %>
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="color-scheme" content="light">
 
     <%# SEO / social shared values %>
     <% site_url         = "https://ronaldlangeveld.com" %>
